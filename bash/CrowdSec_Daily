@@ -7,5 +7,5 @@ NAME=$(date +%Y%m%d-%H%M%S)
 mkdir ${DATA}
 cscli alerts list > ${DATA}/alerts.txt
 cscli decisions list > ${DATA}/decisions.txt
-echo "Crowdsec : ${NAME} Alerts et Décision du jours"| mail -s "CROWDSEC" mail@gmail.com -A ${DATA}/alerts.txt -A ${DATA}/decisions.txt
+echo "Crowdsec : ${NAME} Alerts et Décisions du jour"| mail -s "CROWDSEC" mail@gmail.com -A ${DATA}/alerts.txt -A ${DATA}/decisions.txt
 rm -r ${DATA}

@@ -1,0 +1,30 @@
+#!/bin/bash
+ 
+#Variables
+BACKUP_PATH="/media/backup"
+BACKUP_NOMBRE="3"
+BACKUP_NOM="RSPB_BACKUP"
+STOP_SERVICES="systemctl stop"
+START_SERVICES="systemctl start"
+#FIN
+ 
+# Stop les services avant backup
+${STOP_SERVICES} mariadb
+${STOP_SERVICES} apache2
+${STOP_SERVICES} fail2ban
+${STOP_SERVICES} cron
+ 
+# Créer une image vers repertoire nfs lui attribue un nom et une date.
+dd if=/dev/sda of=${BACKUP_PATH}/${BACKUP_NOM}-$(date +%Y%m%d-%H%M%S).img bs=4M
+ 
+# Start les services après backup
+${START_SERVICES} mariadb
+${START_SERVICES} apache2
+${START_SERVICES} fail2ban
+${START_SERVICES} cron 
+ 
+# Retire ancienne sauvegarde. 
+pushd ${BACKUP_PATH}; ls -tr ${BACKUP_PATH}/${BACKUP_NOM}* | head -n -${BACKUP_NOMBRE} | xargs rm; popd
+
+# Envoie un mail de confirmation
+echo "Sauvegarde : ${BACKUP_NOM}-$(date +%Y%m%d-%H%M%S).img fini." | mail -s "SAUVEGARDE AUTO" mail@gmail.com

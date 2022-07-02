@@ -1,5 +1,5 @@
 #!/bin/bash
-#Met a jour automatiquement, plus envoie des logs par mail.
+#Met à jour automatiquement, plus envoie des logs par mail.
 #Variables
 UPDATE_NOM=$(date +%Y%m%d-%H%M%S)
 LOG="var/log/apt"

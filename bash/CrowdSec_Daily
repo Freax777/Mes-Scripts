@@ -4,7 +4,7 @@
 DATA="/home/freax/crowdsec"
 NAME=$(date +%Y%m%d-%H%M%S)
 #FIN
-cat cscli alerts list > ${DATA}/alerts.txt
-cat cscli decisions list > ${DATA}/decisions.txt
+cscli alerts list > ${DATA}/alerts.txt
+cscli decisions list > ${DATA}/decisions.txt
 echo "Crowdsec : ${NAME} Alerts et Décision du jours"| mail -s "CROWDSEC" backup.freax@gmail.com -A ${DATA}/alerts.txt -A ${DATA}/decisions.txt
 rm ${DATA}/*

@@ -1,7 +1,7 @@
 #!/bin/bash
 ###########################################
-# Script by Freax777 v1				            #
-# Le 05/07/2022					                  #
+# Script by Freax777 v1				      #
+# Le 05/07/2022					          #
 ###########################################
 
 ##Variable##
@@ -14,7 +14,7 @@ read nom
 done
 echo -e "\n"
 while true ; do
-echo -e  " _____ ____  _____    _    __  _______ _____ _____ "
+echo -e      " _____ ____  _____    _    __  _______ _____ _____ "
 echo 		 "|  ___|  _ \| ____|  / \   \ \/ /___  |___  |___  |"
 echo 		 "| |_  | |_) |  _|   / _ \   \  /   / /   / /   / / "
 echo 		 "|  _| |  _ <| |___ / ___ \  /  \  / /   / /   / /  "
@@ -79,9 +79,9 @@ case $choix in
 
 	G | g)	nom=""
 		while [ -z $nom ] ; do
-	  	echo "Changer l'utilisateur :"
-		  read nom
-		  echo "Appuyer sur entrer pour continuer"
+		echo "Changer l'utilisateur :"
+		read nom
+		echo "Appuyer sur entrer pour continuer"
 		done
 		;;
 	   *)
@@ -89,7 +89,7 @@ case $choix in
 		echo "Appuyer sur entrer pour continuer"
 		;;
 	esac
- read
-    echo "Appuyer sur entrer pour continuer"
+read
+echo "Appuyer sur entrer pour continuer"
 clear
 done

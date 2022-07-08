@@ -24,7 +24,7 @@ ${START_SERVICES} fail2ban
 ${START_SERVICES} cron 
  
 # Retire ancienne sauvegarde. 
-pushd ${BACKUP_PATH}; ls -tr ${BACKUP_PATH}/${BACKUP_NOM}* | head -n -${BACKUP_NOMBRE} | xargs rm; popd
+ls -tr ${BACKUP_PATH}/${BACKUP_NOM}* | head -n -${BACKUP_NOMBRE} | xargs rm
 
 # Envoie un mail de confirmation
 echo "Sauvegarde : ${BACKUP_NOM}-$(date +%Y%m%d-%H%M%S).img fini." | mail -s "SAUVEGARDE AUTO" mail@gmail.com

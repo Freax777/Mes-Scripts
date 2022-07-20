@@ -1,7 +1,7 @@
 #!/bin/bash
 #Envoie toutes les décisions et alerts crowdsec par mail.
 #Variables
-DATA="/home/freax/crowdsec"
+DATA="/tmp/crowdsec"
 NAME=$(date +%Y%m%d-%H%M%S)
 #FIN
 mkdir ${DATA}

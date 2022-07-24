@@ -1,4 +1,9 @@
 #!/bin/bash
+###################################
+# Script Crowdsec Daily           #
+#                                 #  
+# Le 24/07/2022 par Freax777      #
+###################################
 #Variables
 user="" #Votre nom d'utilisateur
 mail="" #Votre mail

@@ -1,6 +1,8 @@
 #!/bin/bash
 #Variables
-DATA="/home/freax/crowdsec"
+user="" #Votre nom d'utilisateur
+mail="" #Votre mail
+DATA="/home/${user}/crowdsec"
 NAME=$(date +%Y%m%d-%H%M%S)
 #FIN
 mkdir ${DATA}
@@ -15,5 +17,5 @@ check=$(cat ${DATA}/decisions.txt | wc -l)
    	    false
     fi
 
-echo "Crowdsec : ${NAME} Alerts et Décision du jours"| mail -s "CROWDSEC" backup.freax@gmail.com -A ${DATA}/alerts.txt ${file}
+echo "Crowdsec : ${NAME} Alerts et Décision du jours"| mail -s "CROWDSEC" ${mail} -A ${DATA}/alerts.txt ${file}
 rm -r ${DATA}
